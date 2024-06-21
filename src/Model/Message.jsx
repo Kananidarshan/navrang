@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 const Message = ({ MsgPopup, setMsgPopup }) => {
+  const [name, setName] = useState("");
+  const [massage, setMassage] = useState("");
+  const [mobile, setMobile] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newMsg = {
+      name,
+      massage,
+      mobile,
+    };
+
+    const existingMsg = JSON.parse(localStorage.getItem("msgData")) || [];
+
+    const updatedMsg = [...existingMsg, newMsg];
+
+    localStorage.setItem("msgData", JSON.stringify(updatedMsg));
+
+    console.log(name, massage, mobile);
+    setMsgPopup(false);
+  };
+
   return (
     <>
       {MsgPopup && (
@@ -21,20 +44,26 @@ const Message = ({ MsgPopup, setMsgPopup }) => {
                 </div>
               </div>
               {/* form section  */}
-              <form className="flex flex-col gap-2 mt-4">
+              <form
+                className="flex flex-col gap-2 mt-4"
+                onSubmit={handleSubmit}
+              >
                 <input
                   type="text"
                   placeholder="Name :"
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full border rounded-md border-gray-300 placeholder:text-black  px-2 py-1 mb-4"
                 />
                 <input
                   type="text"
                   placeholder="Message :"
+                  onChange={(e) => setMassage(e.target.value)}
                   className="w-full border rounded-md border-gray-300 placeholder:text-black  px-2 py-1 mb-4"
                 />
                 <input
                   type="text"
                   placeholder="Mobile :"
+                  onChange={(e) => setMobile(e.target.value)}
                   className="w-full border rounded-md border-gray-300 placeholder:text-black  px-2 py-1 mb-4"
                 />
                 <div className="flex justify-center">

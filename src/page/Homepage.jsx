@@ -4,7 +4,7 @@ import Products from "../components/Products/Products";
 import TopProducts from "../components/TopProduct/TopProducts";
 import Banner from "../components/Banner/Banner";
 import Subscribe from "../components/Subscribe/Subscribe";
-import Popup from "../components/Popup/Popup";
+import Popup from "../Model/OrderBox";
 
 const Homepage = () => {
   const [orderPopup, setOrderPopup] = useState(false);

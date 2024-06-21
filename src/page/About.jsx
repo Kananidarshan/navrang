@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import img1 from "../assets/women/kids-1.jpg";
-import Message from "../components/Popup/Message";
+import Message from "../Model/Message";
 const About = () => {
   const navigate = useNavigate();
   const [MsgPopup, setMsgPopup] = useState(false);

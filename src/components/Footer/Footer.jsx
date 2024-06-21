@@ -26,7 +26,7 @@ const Footer = () => {
       link: "/",
     },
     {
-      title: "About",
+      title: "About Us",
       link: "/about",
     },
     {

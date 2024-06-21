@@ -9,7 +9,7 @@ const Menu = [
   { id: 1, name: "Home", link: "/" },
   { id: 2, name: "Contact", link: "/contact" },
   { id: 3, name: "Blog", link: "/blog" },
-  { id: 4, name: "About", link: "/about" },
+  { id: 4, name: "About Us", link: "/about" },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {

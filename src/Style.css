@@ -95,3 +95,8 @@ input:checked+.slider:before {
 .drawer-overlay.open {
     display: block;
 }
+
+/* Add this CSS to your styles */
+.no-scroll {
+    overflow: hidden;
+}
